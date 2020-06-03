@@ -48,7 +48,7 @@
 const express = require('express');
 const app = express();
 
-const cors = requrire('cors');
+const cors = require('cors');
 const router = require('./app/routes/router');
 
 const port = 3030;
@@ -62,8 +62,10 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
     res.json({
-        'All Products': `http://localhost:${port}/`
+        'All foo': `http://localhost:${port}/api/products`
     });
 });
 
 app.use('/api', router);
+
+//localhost:3030/api/products
